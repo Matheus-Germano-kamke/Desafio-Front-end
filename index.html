@@ -68,8 +68,12 @@
         }
         .section-wrapper {
             display: flex;
-
             margin-bottom: 1.5rem;
+        }
+        .image {
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            margin-right: 1rem; /* Espaço entre o ícone e a seção */
+            margin-left: -0.5rem; /* Espaço entre o ícone e a seção */
         }
         .section-wrapper .form-section {
             flex: 1;
@@ -174,74 +178,108 @@
             </div>
 
             <div class="form-section-large" data-title="Produtos" >
-                <!-- Wrapper para a Seção 2: Endereço com Ícone de Lixo -->
+                <!-- Wrapper para a Seção 3: Preferências com Ícone de Lixo -->
                 <div class="section-wrapper">
                     <i class="fas fa-trash delete-icon"></i>
                     <div class="form-section" data-title="Produto - 1">
+                        <div class="section-wrapper">
+                            <img src="images/Captura de tela de 2024-08-10 22-23-54.png" class="image">
+                        <div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-12">
                                 <div class="form-group">
-                                    <label for="street">Rua</label>
-                                    <input type="text" class="form-control" id="street" placeholder="Sua rua">
+                                    <label for="comments">Produto</label>
+                                    <input class="form-control" id="produto"></input>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
                                 <div class="form-group">
-                                    <label for="city">Cidade</label>
-                                    <input type="text" class="form-control" id="city" placeholder="Sua cidade">
+                                    <label for="comments">UND. Medida</label>
+                                    <select class="form-control" id="Medida ">
+                                        <option value="m">a</option>
+                                        <option value="f">b</option>
+                                        <option value="o">c</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">QDTDE. em Estoque</label>
+                                    <input class="form-control" id="estoque"></input>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">Valor Unitário</label>
+                                    <input class="form-control" id="valorU"></input>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">Valor Total</label>
+                                    <input class="form-control" id="valorT"></input>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="state">Estado</label>
-                                    <input type="text" class="form-control" id="state" placeholder="Seu estado">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="zip">CEP</label>
-                                    <input type="text" class="form-control" id="zip" placeholder="Seu CEP">
-                                </div>
-                            </div>
                         </div>
                     </div>
+                </div>
                 </div>
     
                 <!-- Wrapper para a Seção 3: Preferências com Ícone de Lixo -->
                 <div class="section-wrapper">
                     <i class="fas fa-trash delete-icon"></i>
                     <div class="form-section" data-title="Produto - 2">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="gender">Gênero Preferido</label>
-                                    <select class="form-control" id="gender">
-                                        <option value="m">Masculino</option>
-                                        <option value="f">Feminino</option>
-                                        <option value="o">Outro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="newsletter">
-                                        <label class="form-check-label" for="newsletter">Inscrever-se na newsletter</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="section-wrapper">
+                            <img src="images/Captura de tela de 2024-08-10 22-23-54.png" class="image">
+                        <div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="comments">Comentários</label>
-                                    <textarea class="form-control" id="comments" rows="3" placeholder="Seus comentários"></textarea>
+                                    <label for="comments">Produto</label>
+                                    <input class="form-control" id="produto"></input>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">UND. Medida</label>
+                                    <select class="form-control" id="Medida ">
+                                        <option value="m">a</option>
+                                        <option value="f">b</option>
+                                        <option value="o">c</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">QDTDE. em Estoque</label>
+                                    <input class="form-control" id="estoque"></input>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">Valor Unitário</label>
+                                    <input class="form-control" id="valorU"></input>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label for="comments">Valor Total</label>
+                                    <input class="form-control" id="valorT"></input>
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
 
