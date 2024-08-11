@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Ícones de Lixo</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link para o Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        label {
+            margin-bottom: 0%;
+            
+        }
+        .container {
+            font-family: "Kristen ITC", sans-serif;
+        }
+        .form-section {
+            position: relative;
+            border: 2px solid #abac9e; /* Borda escura para cada seção */
+            border-radius: 0.25rem; /* Bordas arredondadas */
+            padding: 1.5rem 1rem 1rem 1rem; /* Ajusta padding para acomodar o título */
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        .form-section::after {
+            content: attr(data-title); /* Usa o valor do atributo data-title para o conteúdo */
+            position: absolute;
+            top: -1.35rem; /* Ajusta a posição do título */
+            left: 1rem; /* Ajusta a posição do título */
+            background-color: #ffffff; /* Cor de fundo para o título */
+            color: #000000; /* Cor do texto do título */
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            border-radius: 0.25rem;
+        }
+        .form-section-large {
+            border: 2px solid #abac9e; /* Borda escura para a seção maior */
+            border-radius: 0.25rem; /* Bordas arredondadas */
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            font-weight: bold;
+        }
+        .form-section-large::after {
+            content: attr(data-title); /* Usa o valor do atributo data-title para o conteúdo */
+            position: absolute;
+            top: -2rem; /* Ajusta a posição do título */
+            left: -0.1rem; /* Ajusta a posição do título */
+            right: -0.1rem;
+            background-color: #0884b4; /* Cor de fundo para o título */
+            color: #fff; /* Cor do texto do título */
+            padding: 0.5rem 1rem;
+            width: auto;
+            font-weight: bold;
+            border-radius: 0.2rem;
+        }
+        .delete-icon {
+            font-size: 2rem; /* Tamanho do ícone */
+            color: #dc3545; /* Cor vermelha para o ícone */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            margin-right: 1rem; /* Espaço entre o ícone e a seção */
+            margin-top: 2rem;
+        }
+        .delete-icon:hover {
+            color: #c82333; /* Cor do ícone quando o mouse passa sobre ele */
+        }
+        .section-wrapper {
+            display: flex;
+
+            margin-bottom: 1.5rem;
+        }
+        .section-wrapper .form-section {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-4 mb-4 text-center pb-4">CADASTRO FORNECEDOR/PRODUTO</h1>
+
+    <form>
+        <!-- Seção 1: Informações Pessoais -->
+        <div class="form-section-large" data-title="Dados do Fornecedor">
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="razaoSocial">Razão Social</label>
+                    <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="nomeFantasia">Nome Fantasia</label>
+                    <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inscricaoEstadual">Inscrição Estadual</label>
+                    <input type="text" class="form-control" id="inscricaoEstadual" placeholder="Inscrição Estadual">
+
+                </div>
+            </div>
+                <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cep" placeholder="CEP">
+                </div>
+                <div class="form-group col-md-4 offset-md-3">
+                    <label for="inscricaoMunicipal">Inscrição Municipal</label>
+                    <input type="text" class="form-control" id="inscricaoMunicipal" placeholder="Inscrição Municipal">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" placeholder="Endereço">
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numero" placeholder="Número">
+
+                </div>
+            </div>
+                <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Complemento">
+
+                </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+
+                </div>
+                <div class="form-group col-md-4">
+                    
+                    <label for="municipio">Município</label>
+                    <input type="text" class="form-control" id="municipio" placeholder="Município">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="estado">Estado</label>
+                    <select id="estado" class="form-control">
+                        <option selected>Escolher...</option>
+                        <option>SP</option>
+                        <option>RJ</option>
+                        <option>MG</option>
+                        <!-- Adicione outros estados conforme necessário -->
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nomeContato">Nome da Pessoa de Contato</label>
+                    <input type="text" class="form-control" id="nomeContato" placeholder="Nome da Pessoa de Contato">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                </div>
+            </div>
+            </div>
+
+            <div class="form-section-large" data-title="Produtos" >
+                <!-- Wrapper para a Seção 2: Endereço com Ícone de Lixo -->
+                <div class="section-wrapper">
+                    <i class="fas fa-trash delete-icon"></i>
+                    <div class="form-section" data-title="Produto - 1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="street">Rua</label>
+                                    <input type="text" class="form-control" id="street" placeholder="Sua rua">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="city">Cidade</label>
+                                    <input type="text" class="form-control" id="city" placeholder="Sua cidade">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="state">Estado</label>
+                                    <input type="text" class="form-control" id="state" placeholder="Seu estado">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="zip">CEP</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="Seu CEP">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Wrapper para a Seção 3: Preferências com Ícone de Lixo -->
+                <div class="section-wrapper">
+                    <i class="fas fa-trash delete-icon"></i>
+                    <div class="form-section" data-title="Produto - 2">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gender">Gênero Preferido</label>
+                                    <select class="form-control" id="gender">
+                                        <option value="m">Masculino</option>
+                                        <option value="f">Feminino</option>
+                                        <option value="o">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">Inscrever-se na newsletter</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="comments">Comentários</label>
+                                    <textarea class="form-control" id="comments" rows="3" placeholder="Seus comentários"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<!-- Scripts do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
