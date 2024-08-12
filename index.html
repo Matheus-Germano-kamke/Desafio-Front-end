@@ -1,200 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio Front-end</title>
-    <meta name="description" content=""> 
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-
-<div class="container-fluid">
-    <h1 class="mt-4 mb-4 text-center pb-4">CADASTRO FORNECEDOR/PRODUTO</h1>
-
-    <form>
-        <div class="form-section-large form-section" data-title="Dados do Fornecedor">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <label for="razaoSocial">Razão Social</label>
-                    <input type="text" class="form-control" id="razaoSocial" placeholder="Razão Social">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <label for="cnpj">CNPJ</label>
-                    <input type="text" class="form-control" id="cnpj" placeholder="CNPJ">
-
-                </div>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Desafio Front-end</title>
+      <meta name="description" content="">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <h1 class="mt-4 mb-4 text-center pb-4">CADASTRO FORNECEDOR/PRODUTO</h1>
+         <form id="formulario" action="/submit_form" method="post">
+            <div class="form-section-large form-section" data-title="Dados do Fornecedor">
+               <div id="fornecedoresContainer"></div>     
             </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <label for="nomeFantasia">Nome Fantasia</label>
-                    <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome Fantasia">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <label for="inscricaoEstadual">Inscrição Estadual</label>
-                    <input type="text" class="form-control" id="inscricaoEstadual" placeholder="Inscrição Estadual">
-
-                </div>
+            <div class="form-section-large form-section" data-title="Produtos">
+               <div id="produtosContainer"></div>
+               <button id="adicionarProduto" type="button" class="btn btn-success w-100 mt-4">Adicionar Produto</button>
+            </div>      
+            <div id="anexoBorda" class="form-section-large form-section pb-2 mt-5" data-title="Anexos">
+               <div class="section-wrapper">
+                  <div class="form-section form-subsection" data-title="Anexos">
+                  <div id="anexosContainer"></div>
+               </div>
             </div>
- 
-            
-                <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                    <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep" placeholder="CEP">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4 offset-md-3">
-                    <label for="inscricaoMunicipal">Inscrição Municipal</label>
-                    <input type="text" class="form-control" id="inscricaoMunicipal" placeholder="Inscrição Municipal">
-                </div>
+               <button id="adicionarAnexo" type="button" class="btn btn-success w-100 mt-2">Incluir Anexo</button>
             </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <label for="endereco">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" placeholder="Endereço">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <label for="numero">Número</label>
-                    <input type="text" class="form-control" id="numero" placeholder="Número">
-
-                </div>
-            </div>
-
-                <div class="row">
-                <div class="form-group col-md-12">
-                    <label for="complemento">Complemento</label>
-                    <input type="text" class="form-control" id="complemento" placeholder="Complemento">
-                </div>
-                </div>
-
-                <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-5">
-                    <label for="bairro">Bairro</label>
-                    <input type="text" class="form-control" id="bairro" placeholder="Bairro">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-4">
-                    <label for="municipio">Município</label>
-                    <input type="text" class="form-control" id="municipio" placeholder="Município">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3">
-                    <label for="estado">Estado</label>
-                    <select id="estado" class="form-control">
-                        <option selected>Escolher...</option>
-                        <option>SP</option>
-                        <option>RJ</option>
-                        <option>MG</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label for="nomeContato">Nome da Pessoa de Contato</label>
-                    <input type="text" class="form-control" id="nomeContato" placeholder="Nome da Pessoa de Contato">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3">
-                    <label for="telefone">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" placeholder="Telefone">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-3">
-                    <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-mail">
-                </div>
-            </div>
-            </div>
-
-            <div class="form-section-large form-section" data-title="Produtos" >
-                <div id="produtoNovo" class="section-wrapper">
-                    <img src="images/Captura de tela de 2024-08-11 00-04-36.png" width="50" height="50" class="delete-icon image ">
-                    <div class="form-section form-subsection" data-title="Produto - 1">
-                        <div class="section-wrapper">
-                            <img src="images/Captura de tela de 2024-08-10 22-23-54.png" class="image">
-                        <div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="comments">Produto</label>
-                                    <input class="form-control" id="produto"></input>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="comments">UND. Medida</label>
-                                    <select class="form-control" id="Medida ">
-                                        <option value="m">a</option>
-                                        <option value="f">b</option>
-                                        <option value="o">c</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="comments">QDTDE. em Estoque</label>
-                                    <input class="form-control" id="estoque"></input>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="comments">Valor Unitário</label>
-                                    <input class="form-control" id="valorU"></input>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="form-group">
-                                    <label for="comments">Valor Total</label>
-                                    <input class="form-control" id="valorT"></input>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-    
-
-
-
-    <div id="duplicaProduto"></div>
-
-    <button id="incluirProdutoBtn" type="button" class="btn btn-success w-100 mt-4">Clonar Produto</button>
-
-            </div>
-
-            <div class="form-section-large form-section pb-2 mt-5" data-title="Anexos">
-                <div class="section-wrapper">
-                    <div class="form-section form-subsection" data-title="Anexos">
-                        <div id="anexoNovo"  class="row">
-                            <div class="col-12">
-                                <img src="images/Captura de tela de 2024-08-11 00-04-36.png" width="50" height="50">
-                                <img src="images/Captura de tela de 2024-08-11 00-30-46.png" width="50" height="50">
-                                <label for="comments" class="ml-4">Documento anexo 1</label>
-                            </div>
-                        </div>
-                         <div id="duplicaAnexos"></div>
-                    </div>
-                </div>
-                <button id="incluirAnexoBtn" type="button" class="btn btn-success w-100 mt-2">Incluir Anexo</button>
-            </div>
-            <div class="btn-final"><button type="submit" class="btn btn-success w-100">Incluir Anexo</button></div>
-            
-    </form>
-</div>
-
-<!-- Scripts do Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="scripts.js"></script>
-
-</body>
+            <div class="btn-final"><button type="submit" class="btn btn-success w-100">Salvar Fornedor</button></div>
+         </form>
+      </div>
+      <!-- Scripts do Bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="./components/fornecedorScript.js"></script>
+      <script src="./components/produtoScript.js"></script>
+      <script src="./components/anexoScript.js"></script>
+      <script src="./components/cepScript.js"></script>
+      <script src="./components/erroScript.js"></script>
+      
+   </body>
 </html>
