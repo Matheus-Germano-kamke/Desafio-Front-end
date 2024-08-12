@@ -15,6 +15,7 @@ label {
     border-radius: 0.25rem; /* Bordas arredondadas */
     font-weight: bold;
 }
+
 .form-section-large {
 
     padding: 1.5rem;
@@ -22,16 +23,19 @@ label {
     width: 100%;
     height: 100%;
 }
+
 .form-subsection {
     padding: 1.5rem 1rem 1rem 1rem; /* Ajusta padding para acomodar o título */
     margin-top: 1rem;
 }
+
 .form-section::after {
     content: attr(data-title); /* Usa o valor do atributo data-title para o conteúdo */
     position: absolute;
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
+
 .form-section-large::after {
     top: -2rem; /* Ajusta a posição do título */
     left: -0.1rem; /* Ajusta a posição do título */
@@ -41,6 +45,7 @@ label {
     width: auto;
     border-radius: 0.2rem;
 }
+
 .form-subsection::after {
     top: -1.35rem; /* Ajusta a posição do título */
     left: 1rem; /* Ajusta a posição do título */
@@ -49,10 +54,10 @@ label {
     border-radius: 0.25rem;
 }
 
-
 .section-wrapper {
     display: flex;
 }
+
 .section-wrapper .form-section {
     flex: 1;
 }
@@ -70,6 +75,12 @@ label {
     margin-right: 1rem; /* Espaço entre o ícone e a seção */
     margin-left: -0.5rem; /* Espaço entre o ícone e a seção */
 }
+
 .delete-icon {
     margin-top: 5rem;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
 }
