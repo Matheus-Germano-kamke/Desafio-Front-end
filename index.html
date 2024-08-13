@@ -5,13 +5,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Desafio Front-end</title>
       <meta name="description" content="">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+      <link rel="stylesheet" type="text/css" href="./style-guide/css/fluig-style-guide.min.css">
       <link rel="stylesheet" href="styles.css">
    </head>
    <body>
-      <div class="container-fluid">
-         <h1 class="mt-4 mb-4 text-center pb-4">CADASTRO FORNECEDOR/PRODUTO</h1>
-         <form id="formulario" action="/submit_form" method="post">
+      <div class="fluig-style-guide container-fluid">
+         <h1 class="fs-xl-margin-top fs-xl-margin-bottom text-center fs-xl-padding-bottom">CADASTRO FORNECEDOR/PRODUTO</h1>
+         <form id="formulario" action="/submit_form" method="post" class="fluig-style-guide">
             <div class="form-section-large form-section" data-title="Dados do Fornecedor">
                <div id="fornecedoresContainer"></div>     
             </div>
@@ -20,9 +21,11 @@
                <button id="adicionarProduto" type="button" class="btn btn-success w-100 mt-4">Adicionar Produto</button>
             </div>      
             <div id="anexoBorda" class="form-section-large form-section pb-2 mt-5" data-title="Anexos">
-               <div class="section-wrapper">
+               <div class="section-wrapper ">
                   <div class="form-section form-subsection" data-title="Anexos">
                   <div id="anexosContainer"></div>
+                  <button id="gerarJSONAnexos">Gerar JSON dos Anexos</button>
+
                </div>
             </div>
                <button id="adicionarAnexo" type="button" class="btn btn-success w-100 mt-2">Incluir Anexo</button>
@@ -31,14 +34,13 @@
          </form>
       </div>
       <!-- Scripts do Bootstrap -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="./components/fornecedorScript.js"></script>
-      <script src="./components/produtoScript.js"></script>
-      <script src="./components/anexoScript.js"></script>
-      <script src="./components/cepScript.js"></script>
-      <script src="./components/erroScript.js"></script>
+
+      <script src="./components/fornecedor.js"></script>
+      <script src="./components/produto.js"></script>
+      <script src="./components/anexo.js"></script>
+      <script src="./components/enviar.js"></script>
+      <script src="./utils/cep.js"></script>
+      <script src="./errors/erro.js"></script>
       
    </body>
 </html>

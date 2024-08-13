@@ -8,49 +8,52 @@ body, html{
 label {
     margin-bottom: 0%;
 }
-
-.form-section {
-    position: relative;
-    border: 2px solid #abac9e; /* Borda escura para cada seção */
-    border-radius: 0.25rem; /* Bordas arredondadas */
-    font-weight: bold;
-}
-
-.form-section-large {
-
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
+form {
     width: 100%;
     height: 100%;
 }
 
+.form-section {
+    position: relative;
+    border: 2px solid #abac9e; 
+    border-radius: 0.25rem; 
+    font-weight: bold;
+}
+
+.form-section-large {
+    padding: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 3.5rem;
+}
+
 .form-subsection {
-    padding: 1.5rem 1rem 1rem 1rem; /* Ajusta padding para acomodar o título */
+    padding: 1.5rem 1rem 1rem 1rem; 
     margin-top: 1rem;
 }
 
 .form-section::after {
-    content: attr(data-title); /* Usa o valor do atributo data-title para o conteúdo */
+    content: attr(data-title); 
     position: absolute;
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
 
 .form-section-large::after {
-    top: -2rem; /* Ajusta a posição do título */
-    left: -0.1rem; /* Ajusta a posição do título */
+    top: -2rem; 
+    left: -0.1rem; 
     right: -0.1rem;
-    background-color: #0884b4; /* Cor de fundo para o título */
-    color: #fff; /* Cor do texto do título */
+    background-color: #0884b4; 
+    color: #fff; 
     width: auto;
     border-radius: 0.2rem;
 }
 
 .form-subsection::after {
-    top: -1.35rem; /* Ajusta a posição do título */
-    left: 1rem; /* Ajusta a posição do título */
-    background-color: #ffffff; /* Cor de fundo para o título */
-    color: #000000; /* Cor do texto do título */
+    top: -1.35rem; 
+    left: 1rem; 
+    background-color: #ffffff; 
+    color: #000000; 
     border-radius: 0.25rem;
 }
 
@@ -71,12 +74,12 @@ label {
 }
 
 .image {
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    margin-right: 1rem; /* Espaço entre o ícone e a seção */
-    margin-left: -0.5rem; /* Espaço entre o ícone e a seção */
+    margin-right: 1rem; 
+    margin-left: -0.5rem; 
 }
 
 .delete-icon {
+    cursor: pointer;
     margin-top: 5rem;
 }
 
@@ -84,3 +87,18 @@ label {
     border: 2px solid red;
     background-color: #ffe6e6;
 }
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

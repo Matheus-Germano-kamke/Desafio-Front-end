@@ -1,5 +1,5 @@
-let produtoCount = 0;
-let proximoId = 2;
+let quantidadeProduto = 0;
+let proximoId = 1;
 
 function criarProduto(produtoId, produtoData = {}) {
     return `
@@ -11,40 +11,40 @@ function criarProduto(produtoId, produtoData = {}) {
                 <div>
                     <div class="row">
                         <div class="col-12">
-                            <div class="form-group">
+                            <div id="campoProduto-${produtoId}" class="form-group">
                                 <label for="produto-${produtoId}">Produto</label>
-                                <input type="text" class="form-control" id="produto-${produtoId}" value="${produtoData.nome || ''}" required>
+                                <input type="text" class="form-control" id="produtoDescricao-${produtoId}" value="${produtoData.nome || ''}" required onblur="validarCampo('campoProduto-${produtoId}', 'produtoDescricao-${produtoId}')">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-3">
-                            <div class="form-group">
+                            <div id="campoMedida-${produtoId}" class="form-group">
                                 <label for="medida-${produtoId}">UND. Medida</label>
-                                <select class="form-select bc-gray" id="medida-${produtoId}" required>
+                                <select class="form-control " id="medida-${produtoId}" required onblur="validarCampo('campoMedida-${produtoId}', 'medida-${produtoId}')">
                                     <option selected></option>
                                     <option value="cm" ${produtoData.medida === 'cm' ? 'selected' : ''}>cm</option>
                                     <option value="metro" ${produtoData.medida === 'metro' ? 'selected' : ''}>metro</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3">
-                            <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-3 fs-no-spin">
+                            <div id="campoEstoque-${produtoId}" class="form-group fs-no-spin">
                                 <label for="estoque-${produtoId}">QDTDE. em Estoque</label>
-                                <input type="text" class="form-control" id="estoque-${produtoId}" onkeyup="valorTotal(${produtoId})" value="${produtoData.estoque || ''}" required>
+                                <input type="number" class="form-control " id="estoque-${produtoId}" onkeyup="valorTotal(${produtoId})" value="${produtoData.estoque || ''}" required onblur="validarCampo('campoEstoque-${produtoId}', 'estoque-${produtoId}')">
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-3">
-                            <div class="form-group">
+                            <div id="campoValorU-${produtoId}" class="form-group">
                                 <label for="valorU-${produtoId}">Valor Unitário</label>
-                                <input type="text" class="form-control" id="valorU-${produtoId}" onkeyup="valorTotal(${produtoId})" value="${produtoData.valorUnitario || ''}" required>
+                                <input type="number" class="form-control" id="valorU-${produtoId}" onkeyup="valorTotal(${produtoId})" value="${produtoData.valorUnitario || ''}" required onblur="validarCampo('campoValorU-${produtoId}', 'valorU-${produtoId}')">
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-3">
                             <div class="form-group">
                                 <label for="valorT-${produtoId}">Valor Total</label>
                                 <fieldset disabled>
-                                <input type="text" class="form-control" id="valorT-${produtoId}" value="${(produtoData.valorUnitario*produtoData.estoque)|| ''}" required>
+                                <input type="number" class="form-control" id="valorT-${produtoId}" value="${(produtoData.valorUnitario*produtoData.estoque)|| ''}" required>
                                 </fieldset>
                             </div>
                         </div>
@@ -60,16 +60,15 @@ function adicionarProduto() {
     const novoProdutoId = proximoId;
     const novoProdutoHTML = criarProduto(novoProdutoId);
     produtosContainer.insertAdjacentHTML('beforeend', novoProdutoHTML);
-    produtoCount++;
+    quantidadeProduto++;
     proximoId++;
 }
 
 function removerProduto(produtoId) {
-    console.log(produtoCount)
-    if(produtoCount != 1){
+    if(quantidadeProduto != 1){
         const produtoElement = document.getElementById(`produto-${produtoId}`);
         produtoElement.remove();
-        produtoCount--;
+        quantidadeProduto--;
     }
 }
 
