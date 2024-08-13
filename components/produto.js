@@ -3,12 +3,12 @@ let proximoId = 1;
 
 function criarProduto(produtoId, produtoData = {}) {
     return `
-    <div id="produto-${produtoId}" class="produto section-wrapper fs-xl-margin-top">
+    <div id="produto-${produtoId}" class="produto section-wrapper fs-xl-margin-top container-fluid">
         <img src="images/Captura de tela de 2024-08-11 00-04-36.png" width="50" height="50" class="delete-icon image" onclick="removerProduto(${produtoId})">
-        <div class="form-section form-subsection" data-title="Produto - ${produtoId}">
-            <div class="section-wrapper ">
+        <div class="form-section form-subsection " data-title="Produto - ${produtoId}">
+            <div class="section-wrapper container-fluid">
                 <img src="images/Captura de tela de 2024-08-10 22-23-54.png" class="image">
-                <div>
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div id="campoProduto-${produtoId}" class="form-group">
