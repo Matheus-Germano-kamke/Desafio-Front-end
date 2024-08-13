@@ -22,7 +22,6 @@ function limpa_formulário_cep() {
  }
  
  function pesquisacep(valor) {
- console.log(valor)
  //Nova variável "cep" somente com dígitos.
  var cep = valor.replace(/\D/g, '');
  

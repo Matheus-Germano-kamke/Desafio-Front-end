@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário JSON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="myForm">
+        <h1>Cadastro de Empresa</h1>
+        <label for="razaoSocial">Razão Social:</label>
+        <input type="text" id="razaoSocial" required>
+
+        <label for="nomeFantasia">Nome Fantasia:</label>
+        <input type="text" id="nomeFantasia" required>
+
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" required>
+
+        <label for="inscricaoEstadual">Inscrição Estadual:</label>
+        <input type="text" id="inscricaoEstadual" required>
+
+        <label for="inscricaoMunicipal">Inscrição Municipal:</label>
+        <input type="text" id="inscricaoMunicipal" required>
+
+        <label for="nomeContato">Nome do Contato:</label>
+        <input type="text" id="nomeContato" required>
+
+        <label for="telefoneContato">Telefone de Contato:</label>
+        <input type="text" id="telefoneContato" required>
+
+        <label for="emailContato">Email de Contato:</label>
+        <input type="email" id="emailContato" required>
+
+        <h2>Produtos</h2>
+        <div id="produtos">
+            <div class="produto">
+                <label for="descricaoProduto">Descrição do Produto:</label>
+                <input type="text" class="descricaoProduto" required>
+
+                <label for="unidadeMedida">Unidade de Medida:</label>
+                <input type="text" class="unidadeMedida" required>
+
+                <label for="qtdeEstoque">Quantidade em Estoque:</label>
+                <input type="number" class="qtdeEstoque" required>
+
+                <label for="valorUnitario">Valor Unitário:</label>
+                <input type="number" class="valorUnitario" step="0.01" required>
+
+                <label for="valorTotal">Valor Total:</label>
+                <input type="number" class="valorTotal" step="0.01" required>
+            </div>
+        </div>
+        <button type="button" id="addProduto">Adicionar Produto</button>
+
+        <h2>Anexos</h2>
+        <div id="anexos">
+            <div class="anexo">
+                <label for="nomeArquivo">Nome do Arquivo:</label>
+                <input type="text" class="nomeArquivo" required>
+
+                <label for="blobArquivo">Blob do Arquivo:</label>
+                <input type="text" class="blobArquivo" required>
+            </div>
+        </div>
+        <button type="button" id="addAnexo">Adicionar Anexo</button>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio do formulário
+
+    const produtos = [];
+    const anexos = [];
+
+    // Coleta dados dos produtos
+    const produtoDivs = document.querySelectorAll('.produto');
+    produtoDivs.forEach((produtoDiv, index) => {
+        const produto = {
+            indice: index + 1,
+            descricaoProduto: produtoDiv.querySelector('.descricaoProduto').value,
+            unidadeMedida: produtoDiv.querySelector('.unidadeMedida').value,
+            qtdeEstoque: produtoDiv.querySelector('.qtdeEstoque').value,
+            valorUnitario: produtoDiv.querySelector('.valorUnitario').value,
+            valorTotal: produtoDiv.querySelector('.valorTotal').value
+        };
+        produtos.push(produto);
+    });
+
+    // Coleta dados dos anexos
+    const anexoDivs = document.querySelectorAll('.anexo');
+    anexoDivs.forEach((anexoDiv, index) => {
+        const anexo = {
+            indice: index + 1,
+            nomeArquivo: anexoDiv.querySelector('.nomeArquivo').value,
+            blobArquivo: anexoDiv.querySelector('.blobArquivo').value
+        };
+        anexos.push(anexo);
+    });
+
+    // Monta o JSON
+    const jsonData = {
+        razaoSocial: document.getElementById('razaoSocial').value,
+        nomeFantasia: document.getElementById('nomeFantasia').value,
+        cnpj: document.getElementById('cnpj').value,
+        inscricaoEstadual: document.getElementById('inscricaoEstadual').value,
+        inscricaoMunicipal: document.getElementById('inscricaoMunicipal').value,
+        nomeContato: document.getElementById('nomeContato').value,
+        telefoneContato: document.getElementById('telefoneContato').value,
+        emailContato: document.getElementById('emailContato').value,
+        produtos: produtos,
+        anexos: anexos
+    };
+
+    console.log(JSON.stringify(jsonData, null, 2)); // Exibe o JSON no console
+});
+
+// Função para adicionar um novo produto
+document.getElementById('addProduto').addEventListener('click', function() {
+    const produtosDiv = document.getElementById('produtos');
+    const novoProdutoDiv = document.createElement('div');
+    novoProdutoDiv.className = 'produto';
+    novoProdutoDiv.innerHTML = `
+        <label for="descricaoProduto">Descrição do Produto:</label>
+        <input type="text" class="descricaoProduto" required>
+
+        <label for="unidadeMedida">Unidade de Medida:</label>
+        <input type="text" class="unidadeMedida" required>
+
+        <label for="qtdeEstoque">Quantidade em Estoque:</label>
+        <input type="number" class="qtdeEstoque" required>
+
+        <label for="valorUnitario">Valor Unitário:</label>
+        <input type="number" class="valorUnitario" step="0.01" required>
+
+        <label for="valorTotal">Valor Total:</label>
+        <input type="number" class="valorTotal" step="0.01" required>
+    `;
+    produtosDiv.appendChild(novoProdutoDiv);
+});
+
+// Função para adicionar um novo anexo
+document.getElementById('addAnexo').addEventListener('click', function() {
+    const anexosDiv = document.getElementById('anexos');
+    const novoAnexoDiv = document.createElement('div');
+    novoAnexoDiv.className = 'anexo';
+    novoAnexoDiv.innerHTML = `
+        <label for="nomeArquivo">Nome do Arquivo:</label>
+        <input type="text" class="nomeArquivo" required>
+
+        <label for="blobArquivo">Blob do Arquivo:</label>
+        <input type="text" class="blobArquivo" required>
+    `;
+    anexosDiv.appendChild(novoAnexoDiv);
+});
+
+    </script>
+</body>
+</html>
