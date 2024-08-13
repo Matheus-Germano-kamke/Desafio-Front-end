@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Pega os elementos
     var modal = document.getElementById("myModal");
     var btn = document.getElementById("openModalBtn");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         successMessage.style.display = "none";
 
         // Após 5 segundos, esconde o loader e mostra a mensagem de sucesso
-        setTimeout(function() {
+        setTimeout(function () {
             loader.style.display = "none";
             successMessage.style.display = "block";
             console.log(data)
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Adiciona um listener para o evento personalizado
-    document.addEventListener("openModalEvent", function(event) {
+    document.addEventListener("openModalEvent", function (event) {
         openModal(event.detail); // Chama a função para abrir o modal
     });
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     span.addEventListener("click", closeModal);
 
     // Quando o usuário clicar fora do modal, fecha o modal
-    window.addEventListener("click", function(event) {
+    window.addEventListener("click", function (event) {
         if (event.target == modal) {
             closeModal();
         }

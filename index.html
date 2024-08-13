@@ -4,39 +4,50 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Desafio Front-end</title>
-      <meta name="description" content="">
+      <meta name="description" content>
 
-      <link rel="stylesheet" type="text/css" href="./style-guide/css/fluig-style-guide.min.css">
-      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" type="text/css"
+         href="./style-guide/css/fluig-style-guide.min.css">
+      <link rel="stylesheet" href="./style-guide/css/styles.css">
    </head>
    <body>
       <div class="fluig-style-guide container-fluid">
-         <h1 class="fs-xl-margin-top fs-xl-margin-bottom text-center fs-xl-padding-bottom">CADASTRO FORNECEDOR/PRODUTO</h1>
-         <form id="formulario" action="/submit_form" method="post" class="fluig-style-guide">
-            <div class="form-section-large form-section" data-title="Dados do Fornecedor">
-               <div id="fornecedoresContainer"></div>     
+         <h1
+            class="fs-xl-margin-top fs-xl-margin-bottom text-center fs-xl-padding-bottom">CADASTRO
+            FORNECEDOR/PRODUTO</h1>
+         <form id="formulario" action="/submit_form" method="post"
+            class="fluig-style-guide">
+            <div class="form-section-large form-section"
+               data-title="Dados do Fornecedor">
+               <div id="fornecedoresContainer"></div>
             </div>
             <div class="form-section-large form-section" data-title="Produtos">
                <div id="produtosContainer"></div>
-               <button id="adicionarProduto" type="button" class="btn btn-success w-100 mt-4">Adicionar Produto</button>
-            </div>      
-            <div id="anexoBorda" class="form-section-large form-section pb-2 mt-5" data-title="Anexos">
+               <button id="adicionarProduto" type="button"
+                  class="btn btn-success w-100 mt-4">Adicionar Produto</button>
+            </div>
+            <div id="anexoBorda"
+               class="form-section-large form-section pb-2 mt-5"
+               data-title="Anexos">
                <div class="section-wrapper ">
                   <div class="form-section form-subsection" data-title="Anexos">
-                  <div id="anexosContainer"></div>
+                     <div id="anexosContainer"></div>
+                  </div>
                </div>
+               <button id="adicionarAnexo" type="button"
+                  class="btn btn-success w-100 mt-2">Incluir Anexo</button>
             </div>
-               <button id="adicionarAnexo" type="button" class="btn btn-success w-100 mt-2">Incluir Anexo</button>
-            </div>
-            <div class="btn-final"><button id="openModalBtn" type="submit" class="btn btn-success w-100">Salvar Fornedor</button></div>
+            <div class="btn-final"><button id="openModalBtn" type="submit"
+                  class="btn btn-success w-100">Salvar Fornedor</button></div>
          </form>
          <div style="display: none;" id="myModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="loading" class="loader"></div>
-                <p id="successMessage" class="success-message">Sucesso! Ação concluída.</p>
+               <span class="close">&times;</span>
+               <div id="loading" class="loader"></div>
+               <p id="successMessage" class="success-message">Sucesso! Ação
+                  concluída.</p>
             </div>
-        </div>
+         </div>
       </div>
       <!-- Scripts do Bootstrap -->
 
@@ -47,6 +58,6 @@
       <script src="./utils/cep.js"></script>
       <script src="./errors/erro.js"></script>
       <script src="./components/modal.js"></script>
-      
+
    </body>
 </html>

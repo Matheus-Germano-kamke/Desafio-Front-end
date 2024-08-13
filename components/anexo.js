@@ -30,7 +30,7 @@ function adicionarAnexo() {
 function removerAnexo(anexoId) {
     sessionStorage.removeItem(`fileBlob-${anexoId}`);
     document.getElementById(`uploadBtn-${anexoId}`).textContent = `Documento anexo ${anexoId}`;
-    if(quantiadeAnexo > 1){
+    if (quantiadeAnexo > 1) {
         const anexoElement = document.getElementById(`anexo-${anexoId}`);
         anexoElement.remove();
         quantiadeAnexo--;
@@ -41,20 +41,20 @@ function anexarAnexo(anexoId) {
     const fileInput = document.getElementById(`fileInput-${anexoId}`);
     const downloadLink = document.getElementById(`download-${anexoId}`);
 
-    document.getElementById(`uploadBtn-${anexoId}`).addEventListener('click', function() {
+    document.getElementById(`uploadBtn-${anexoId}`).addEventListener('click', function () {
         document.getElementById(`fileInput-${anexoId}`).click();
     });
-    
-    fileInput.addEventListener('change', function(event) {
+
+    fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             document.getElementById(`uploadBtn-${anexoId}`).textContent = `${file.name}`;
         } else {
             document.getElementById(`uploadBtn-${anexoId}`).textContent = `Documento anexo ${anexoId}`;
         }
-        
+
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             const blob = new Blob([e.target.result], { type: file.type });
             sessionStorage.setItem(`fileBlob-${anexoId}`, btoa(e.target.result));
             const url = URL.createObjectURL(blob);
