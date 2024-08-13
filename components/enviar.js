@@ -1,4 +1,4 @@
-document.getElementById('formulario').addEventListener('submit', function(event) {
+document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const produtos = [];
@@ -6,7 +6,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
 
     const produtoDivs = document.querySelectorAll('div[id^="produto-"]');
     produtoDivs.forEach((produtoDiv, index) => {
-        const [,numeroProduto] = produtoDiv.id.split("-") 
+        const [, numeroProduto] = produtoDiv.id.split("-")
         const produto = {
             indice: index + 1,
             descricaoProduto: document.getElementById(`produtoDescricao-${numeroProduto}`).value,
@@ -17,10 +17,10 @@ document.getElementById('formulario').addEventListener('submit', function(event)
         };
         produtos.push(produto);
     });
- 
+
     const anexoDivs = document.querySelectorAll('.anexo');
     anexoDivs.forEach((anexoDiv, index) => {
-        const [,numero] = anexoDiv.querySelector('.upload-btn').id.split("-") 
+        const [, numero] = anexoDiv.querySelector('.upload-btn').id.split("-")
         const anexo = {
             indice: index + 1,
             nomeArquivo: anexoDiv.querySelector('.upload-btn').textContent,

@@ -3,14 +3,14 @@ let proximoId = 1;
 
 function criarProduto(produtoId, produtoData = {}) {
     return `
-    <div id="produto-${produtoId}" class="produto section-wrapper mt-3">
+    <div id="produto-${produtoId}" class="produto section-wrapper fs-xl-margin-top">
         <img src="images/Captura de tela de 2024-08-11 00-04-36.png" width="50" height="50" class="delete-icon image" onclick="removerProduto(${produtoId})">
         <div class="form-section form-subsection" data-title="Produto - ${produtoId}">
             <div class="section-wrapper ">
                 <img src="images/Captura de tela de 2024-08-10 22-23-54.png" class="image">
                 <div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-md-12">
                             <div id="campoProduto-${produtoId}" class="form-group">
                                 <label for="produto-${produtoId}">Produto</label>
                                 <input type="text" class="form-control" id="produtoDescricao-${produtoId}" value="${produtoData.nome || ''}" required onblur="validarCampo('campoProduto-${produtoId}', 'produtoDescricao-${produtoId}')">
@@ -44,7 +44,7 @@ function criarProduto(produtoId, produtoData = {}) {
                             <div class="form-group">
                                 <label for="valorT-${produtoId}">Valor Total</label>
                                 <fieldset disabled>
-                                <input type="number" class="form-control" id="valorT-${produtoId}" value="${(produtoData.valorUnitario*produtoData.estoque)|| ''}" required>
+                                <input type="number" class="form-control" id="valorT-${produtoId}" value="${(produtoData.valorUnitario * produtoData.estoque) || ''}" required>
                                 </fieldset>
                             </div>
                         </div>
@@ -65,16 +65,16 @@ function adicionarProduto() {
 }
 
 function removerProduto(produtoId) {
-    if(quantidadeProduto != 1){
+    if (quantidadeProduto != 1) {
         const produtoElement = document.getElementById(`produto-${produtoId}`);
         produtoElement.remove();
         quantidadeProduto--;
     }
 }
 
-function valorTotal(produtoId){
-    let valorUnitario = document.getElementById(`valorU-${produtoId}`).value ;
-    let quantidadeEstoque = document.getElementById(`estoque-${produtoId}`).value ;
+function valorTotal(produtoId) {
+    let valorUnitario = document.getElementById(`valorU-${produtoId}`).value;
+    let quantidadeEstoque = document.getElementById(`estoque-${produtoId}`).value;
     valorEstoque = valorUnitario * quantidadeEstoque;
     document.getElementById(`valorT-${produtoId}`).value = valorEstoque;
 }

@@ -1,5 +1,5 @@
 function criarFornecedor(fornecedorId, fornecedorData = {}) {
-    return `
+   return `
     <div class="container-fluid">
        <div class="row">
           <div id="campo1" class="col-xs-12 col-sm-6 col-md-8">
@@ -77,7 +77,7 @@ function criarFornecedor(fornecedorId, fornecedorData = {}) {
        </div>
        </div>`;
 
- }
+}
 
 function adicionarFornecedor() {
    const fornecedoresContainer = document.getElementById('fornecedoresContainer');
@@ -89,6 +89,6 @@ function adicionarFornecedor() {
 adicionarFornecedor();
 
 
- 
- 
- 
+
+
+

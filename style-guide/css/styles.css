@@ -1,4 +1,5 @@
-body, html{
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -8,6 +9,7 @@ body, html{
 label {
     margin-bottom: 0%;
 }
+
 form {
     width: 100%;
     height: 100%;
@@ -15,8 +17,8 @@ form {
 
 .form-section {
     position: relative;
-    border: 2px solid #abac9e; 
-    border-radius: 0.25rem; 
+    border: 2px solid #abac9e;
+    border-radius: 0.25rem;
     font-weight: bold;
 }
 
@@ -28,32 +30,32 @@ form {
 }
 
 .form-subsection {
-    padding: 1.5rem 1rem 1rem 1rem; 
+    padding: 1.5rem 1rem 1rem 1rem;
     margin-top: 1rem;
 }
 
 .form-section::after {
-    content: attr(data-title); 
+    content: attr(data-title);
     position: absolute;
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
 
 .form-section-large::after {
-    top: -2rem; 
-    left: -0.1rem; 
+    top: -2rem;
+    left: -0.1rem;
     right: -0.1rem;
-    background-color: #0884b4; 
-    color: #fff; 
+    background-color: #0884b4;
+    color: #fff;
     width: auto;
     border-radius: 0.2rem;
 }
 
 .form-subsection::after {
-    top: -1.35rem; 
-    left: 1rem; 
-    background-color: #ffffff; 
-    color: #000000; 
+    top: -1.35rem;
+    left: 1rem;
+    background-color: #ffffff;
+    color: #000000;
     border-radius: 0.25rem;
 }
 
@@ -74,8 +76,8 @@ form {
 }
 
 .image {
-    margin-right: 1rem; 
-    margin-left: -0.5rem; 
+    margin-right: 1rem;
+    margin-left: -0.5rem;
 }
 
 .delete-icon {
@@ -93,13 +95,13 @@ form {
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 
@@ -108,11 +110,12 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-  /* Estilo do modal */
-  .modal {
-    display: none; /* Escondido por padrão */
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    /* Escondido por padrão */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -124,9 +127,9 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
     padding: 20px;
     border: 1px solid #888;
@@ -134,10 +137,10 @@ button {
     text-align: center;
     border-radius: 10px;
     position: relative;
-  }
-  
-  /* Botão de fechar (X) */
-  .close {
+}
+
+/* Botão de fechar (X) */
+.close {
     position: absolute;
     top: 10px;
     right: 20px;
@@ -145,45 +148,47 @@ button {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  /* Animação de loading simples */
-  .loader {
+}
+
+/* Animação de loading simples */
+.loader {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: #3498db;
     animation: pulse 1s infinite;
     margin: 20px auto;
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
+
     50% {
-      transform: scale(1.5);
-      opacity: 0.5;
+        transform: scale(1.5);
+        opacity: 0.5;
     }
+
     100% {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  }
-  
-  /* Estilo da mensagem de sucesso */
-  .success-message {
-    display: none; /* Escondido por padrão */
+}
+
+/* Estilo da mensagem de sucesso */
+.success-message {
+    display: none;
+    /* Escondido por padrão */
     font-size: 18px;
     color: green;
     margin-top: 20px;
-  }
-
+}
