@@ -10,7 +10,7 @@ function criarAnexo(anexoId, anexoData = {}) {
                 <a id="download-${anexoId}" class="download-link">
                     <img src="images/Captura de tela de 2024-08-11 00-30-46.png" width="50" height="50" class="fs-cursor-pointer" alt="Download">
                 </a> 
-                <input type="file" id="fileInput-${anexoId}" style="display:none" class="file-input" accept=".pdf, .doc, .docx, .txt">
+                <input type="file" id="fileInput-${anexoId}" style="display:none" class="file-input form-control" accept=".pdf, .doc, .docx, .txt" required onblur="validarCampo('anexo', 'fileInput-${anexoId}')">
                 <label id="uploadBtn-${anexoId}" for="comments" class="ml-4 align-items-start upload-btn fs-cursor-pointer" onclick="anexarAnexo(${anexoId})">Documento anexo ${anexoId}</label>
             </div>
         </div>
@@ -65,29 +65,8 @@ function anexarAnexo(anexoId) {
     });
 }
 
-function gerarJSONAnexos() {
-    const anexos = [];
-    for (let i = 1; i <= proximoIdAnexo - 1; i++) {
-        const anexoElement = document.getElementById(`anexo-${i}`);
-        if (anexoElement) {
-            const fileInput = document.getElementById(`fileInput-${i}`);
-            const fileBlob = sessionStorage.getItem(`fileBlob-${i}`);
-            let fileName = fileInput ? fileInput.files[0]?.name || `Documento anexo ${i}` : `Documento anexo ${i}`;
-            anexos.push({
-                id: i,
-                fileName: fileName,
-                fileBlob: fileBlob ? fileBlob : null
-            });
-        }
-    }
-    return JSON.stringify(anexos, null, 2); // Pretty print the JSON
-}
 
 adicionarAnexo();
 
 document.getElementById('adicionarAnexo').addEventListener('click', adicionarAnexo);
 
-// Example usage
-document.getElementById('gerarJSONAnexos').addEventListener('click', function() {
-    console.log(gerarJSONAnexos());
-});
